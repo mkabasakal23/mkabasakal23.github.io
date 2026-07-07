@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mert Ali Kabasakal | Personal Brand Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            950: '#030712',
+                            900: '#0B132B',
+                            800: '#1C2541',
+                            700: '#3A506B',
+                        },
+                        offwhite: {
+                            50: '#F8FAFC',
+                            100: '#F1F5F9',
+                            200: '#E2E8F0',
+                            300: '#CBD5E1',
+                        },
+                        accent: {
+                            teal: '#06B6D4',
+                            emerald: '#10B981',
+                            violet: '#8B5CF6',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom glow effects & scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B132B;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1C2541;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3A506B;
+        }
+        .glow-effect {
+            box-shadow: 0 0 40px -10px rgba(6, 182, 212, 0.15);
+        }
+        .glow-text {
+            text-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-navy-950 text-offwhite-100 font-sans antialiased selection:bg-accent-teal selection:text-navy-950 relative overflow-x-hidden">
+
+    <!-- Background Interactive Network Canvas (Reflecting Intelligent User Interfaces) -->
+    <canvas id="interactiveCanvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-30 pointer-events-none"></canvas>
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-navy-950/80 border-b border-white/5 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <span class="w-8 h-8 rounded-lg bg-gradient-to-tr from-accent-teal to-accent-violet flex items-center justify-center font-bold text-navy-950 text-sm">MK</span>
+                    <span class="font-extrabold tracking-wider text-offwhite-50 text-lg">MERT ALI KABASAKAL</span>
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#whoiam" class="text-offwhite-300 hover:text-accent-teal transition-colors text-sm font-medium">Who I Am</a>
+                    <a href="#skills" class="text-offwhite-300 hover:text-accent-teal transition-colors text-sm font-medium">My Skills</a>
+                    <a href="#future" class="text-offwhite-300 hover:text-accent-teal transition-colors text-sm font-medium">Future Goals</a>
+                    <a href="#contact" class="px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-offwhite-50 hover:bg-white/10 hover:border-accent-teal/50 transition-all text-sm font-medium">Get in Touch</a>
+                </div>
+                <!-- Mobile menu button -->
+                <button id="mobileMenuBtn" class="md:hidden text-offwhite-200 hover:text-accent-teal p-2">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-navy-900 border-b border-white/5 px-4 pt-2 pb-4 space-y-2">
+            <a href="#whoiam" class="block py-2 text-offwhite-300 hover:text-accent-teal transition-colors">Who I Am</a>
+            <a href="#skills" class="block py-2 text-offwhite-300 hover:text-accent-teal transition-colors">My Skills</a>
+            <a href="#future" class="block py-2 text-offwhite-300 hover:text-accent-teal transition-colors">Future Goals</a>
+            <a href="#contact" class="block py-2 text-accent-teal font-medium">Get in Touch</a>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header class="relative min-h-[90vh] flex items-center justify-center pt-12 overflow-hidden px-4">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(6,182,212,0.08),transparent_50%)]"></div>
+        <div class="max-w-5xl mx-auto text-center z-10">
+            <!-- Koç University Tech Badge -->
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 mb-8 text-xs sm:text-sm text-offwhite-200 hover:border-accent-teal/40 transition-all">
+                <span class="w-2.5 h-2.5 rounded-full bg-accent-teal animate-pulse"></span>
+                <span>Computer Engineering Student @ <strong>Koç University</strong></span>
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-offwhite-50 mb-6 leading-tight">
+                Engineering <span class="bg-gradient-to-r from-accent-teal via-accent-violet to-accent-emerald bg-clip-text text-transparent">Intelligent</span> & Human-Centric Systems
+            </h1>
+            
+            <p class="text-lg sm:text-xl text-offwhite-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Developing intelligent interfaces at Koç University while bridging technical engineering with digital marketing strategy and project leadership.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#whoiam" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-accent-teal to-accent-emerald text-navy-950 font-bold hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:scale-105 transition-all text-center">
+                    Explore My Work <i class="fa-solid fa-arrow-down ml-2"></i>
+                </a>
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-offwhite-50 font-semibold transition-all text-center">
+                    Let's Connect
+                </a>
+            </div>
+
+            <!-- Arrow indicators down -->
+            <div class="mt-16 animate-bounce">
+                <a href="#whoiam" class="text-offwhite-300 hover:text-accent-teal">
+                    <i class="fa-solid fa-angles-down text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section 1: Who I Am -->
+    <section id="whoiam" class="py-24 relative px-4 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-xs font-semibold tracking-widest text-accent-teal uppercase px-3 py-1 rounded-full bg-accent-teal/10">Step 1: Personal Profile</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-offwhite-50 mt-3">Who I Am</h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-accent-teal to-accent-violet mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Rich Descriptive Text -->
+                <div class="lg:col-span-7 space-y-6">
+                    <h3 class="text-2xl font-bold text-accent-teal">Bridging the Gap Between Code, Intelligence, and Interaction</h3>
+                    
+                    <p class="text-offwhite-200 text-lg leading-relaxed">
+                        I am a Computer Engineering student at <strong class="text-offwhite-50">Koç University</strong>, passionate about joining strict technical systems with user-friendly, empathetic designs. During my academic journey, I have had the privilege to work in the <strong class="text-offwhite-50">Intelligent User Interfaces (IUI) lab</strong>. This research has given me rich hands-on experience in complex data processing, analytics, and designing smart human-computer interactions.
+                    </p>
+
+                    <p class="text-offwhite-200 text-lg leading-relaxed">
+                        Yet, I believe code should not live in a vacuum. To complement my core engineering studies, I actively lead dynamic digital projects and direct social media workflows, mastering target audience engagement, strategic project management, and fast-paced marketing dynamics.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <span class="block text-2xl font-extrabold text-accent-teal">IUI Lab</span>
+                            <span class="text-sm text-offwhite-300">Intelligent User Interfaces Research</span>
+                        </div>
+                        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                            <span class="block text-2xl font-extrabold text-accent-emerald">PM & Marketing</span>
+                            <span class="text-sm text-offwhite-300">Practical Social & Project Strategy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 Visual Representation (SVG Engineering Interface) -->
+                <div class="lg:col-span-5 relative">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-accent-teal to-accent-violet opacity-20 blur-2xl rounded-3xl"></div>
+                    <div class="relative bg-navy-900 border border-white/10 rounded-2xl p-6 glow-effect shadow-2xl">
+                        <!-- Header of "IDE Mockup" -->
+                        <div class="flex items-center justify-between pb-4 border-b border-white/5 mb-6">
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                                <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                                <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                            </div>
+                            <span class="text-xs text-offwhite-300 font-mono">WhoIAm.py</span>
+                        </div>
+                        <!-- Beautiful Animated Interactive Interface Showcase -->
+                        <div class="space-y-4 font-mono text-xs sm:text-sm text-offwhite-300">
+                            <p class="text-accent-violet">class <span class="text-accent-teal">MertAliKabasakal</span>:</p>
+                            <p class="pl-4 text-white/40"># Computer Engineering @ Koç University</p>
+                            <p class="pl-4">def __init__(self):</p>
+                            <p class="pl-8">self.focus = <span class="text-accent-emerald">"Intelligent User Interfaces"</span></p>
+                            <p class="pl-8">self.skills = [<span class="text-accent-teal">"Data Processing"</span>, <span class="text-accent-teal">"Management"</span>]</p>
+                            <p class="pl-8">self.marketing = <span class="text-accent-teal">True</span></p>
+                            <br>
+                            <p class="pl-4">def get_approach(self):</p>
+                            <p class="pl-8">return <span class="text-accent-violet">"Combining code with human experience."</span></p>
+                        </div>
+                        
+                        <!-- Mini Interactive element to verify style -->
+                        <div class="mt-8 pt-4 border-t border-white/5 flex items-center justify-between">
+                            <span class="text-xs text-offwhite-300">Click to run script simulation:</span>
+                            <button id="simulateBtn" class="px-3 py-1.5 rounded bg-accent-teal text-navy-950 text-xs font-bold hover:bg-accent-teal/80 transition-all">
+                                Run Profile()
+                            </button>
+                        </div>
+                        <!-- Output window (collapsed by default) -->
+                        <div id="simulatedOutput" class="hidden mt-4 p-3 rounded bg-black/40 border border-white/5 text-xs text-accent-emerald font-mono">
+                            <p class="animate-pulse">> Initializing Mert's profile...</p>
+                            <p class="mt-1 text-offwhite-100">> System Ready: Analytical focus combined with high creativity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: My Skills -->
+    <section id="skills" class="py-24 bg-navy-900 px-4 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-xs font-semibold tracking-widest text-accent-violet uppercase px-3 py-1 rounded-full bg-accent-violet/10">Step 2: Core Strengths</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-offwhite-50 mt-3">My Skills & Expertise</h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-accent-violet to-accent-teal mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Skill Column 1: Engineering & Data -->
+                <div class="bg-navy-950 border border-white/5 rounded-2xl p-8 hover:border-accent-teal/50 transition-all hover:-translate-y-2 duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-accent-teal/10 flex items-center justify-center text-accent-teal mb-6">
+                            <i class="fa-solid fa-code text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-offwhite-50 mb-4">Engineering & Data Science</h3>
+                        <p class="text-offwhite-300 text-sm leading-relaxed mb-6">
+                            Robust computational logic with data insights. Working at the core of computer science to process information cleanly.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-2 text-offwhite-200 text-sm">
+                                <i class="fa-solid fa-circle-check text-accent-teal text-xs"></i>
+                                <span>Computer Engineering Fundamentals</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-offwhite-200 text-sm">
+                                <i class="fa-solid fa-circle-check text-accent-teal text-xs"></i>
+                                <span>Data Processing & Analytics</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-offwhite-200 text-sm">
+                                <i class="fa-solid fa-circle-check text-accent-teal text-xs"></i>
+                                <span>Intelligent User Interfaces (IUI)</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-offwhite-200 text-sm">
+                                <i class="fa-solid fa-circle-check text-accent-teal text-xs"></i>
+                                <span>Human-Computer Interaction (HCI)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-white/5">
+                        <span class="text-xs text-accent-teal font-mono tracking-wider uppercase">Focus: Architecture & Intelligence</span>
+                    </div>
+                </div>
+
+                <!-- Skill Column 2: Management & Strategy -->
+                <div class="bg-navy-950 border border-white/5 rounded-2xl p-8 hover:border-accent-violet/50 transition-all hover:-translate-y-2 duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-accent-violet/10 flex items-center justify-center text-accent-violet mb-6">
+                            <i class="fa-solid fa-list-check text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-offwhite-50 mb-4">Management & Strategy</h3>
+                        <p class="text-offwhite-300 text-sm leading-relaxed mb-6">
+                            Bringing project roadmaps to life. Experienced with coordinating cross-functional ideas and aligning execution.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-2 text-offwhite-200 text-sm">
+                                <i class="fa-solid fa-circle-check text-accent-violet text-xs"></i>
+                                <span>Tech Project Management</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-offwhite-200 text-sm">
+                                <i class="fa-solid fa-circle-check text-accent-violet text-xs"></i>
+                                <span>Agile/Scrum Methodologies</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-offwhite-200 text-sm">
+                                <i class="fa-solid fa-circle-check text-accent-violet text-xs"></i>
+                                <span>Task Prioritization & Scheduling</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-offwhite-200 text-sm">
+                                <i class="fa-solid fa-circle-check text-accent-violet text-xs"></i>
+                                <span>Leadership & Coordination</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-white/5">
+                        <span class="text-xs text-accent-violet font-mono tracking-wider uppercase">Focus: Organization & Velocity</span>
+                    </div>
+                </div>
+
+                <!-- Skill Column 3: Marketing & Engagement -->
+                <div class="bg-navy-950 border border-white/5 rounded-2xl p-8 hover:border-accent-emerald/50 transition-all hover:-translate-y-2 duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-accent-emerald/10 flex items-center justify-center text-accent-emerald mb-6">
+                            <i class="fa-solid fa-chart-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-offwhite-50 mb-4">Marketing & Engagement</h3>
+                        <p class="text-offwhite-300 text-sm leading-relaxed mb-6">
+                            Formulating digital identities that scale. Crafting rich messages that resonate across platforms and spark active organic growth.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-2 text-offwhite-200 text-sm">
+                                <i class="fa-solid fa-circle-check text-accent-emerald text-xs"></i>
+                                <span>Social Media Management</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-offwhite-200 text-sm">
+                                <i class="fa-solid fa-circle-check text-accent-emerald text-xs"></i>
+                                <span>Digital Marketing Strategies</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-offwhite-200 text-sm">
+                                <i class="fa-solid fa-circle-check text-accent-emerald text-xs"></i>
+                                <span>Content Creation & Visuals</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-offwhite-200 text-sm">
+                                <i class="fa-solid fa-circle-check text-accent-emerald text-xs"></i>
+                                <span>Organic Growth & Web Analytics</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-white/5">
+                        <span class="text-xs text-accent-emerald font-mono tracking-wider uppercase">Focus: Creative Resonance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: My Future Goal -->
+    <section id="future" class="py-24 relative px-4 border-t border-white/5 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(16,185,129,0.08),transparent_50%)]"></div>
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-xs font-semibold tracking-widest text-accent-emerald uppercase px-3 py-1 rounded-full bg-accent-emerald/10">Step 3: Vision Board</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-offwhite-50 mt-3">My Future Goals</h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-accent-emerald to-accent-teal mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Goals Visual Representation (SVG dashboard with medical + digital marketing chart style) -->
+                <div class="order-2 lg:order-1 relative">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-accent-emerald to-accent-teal opacity-20 blur-2xl rounded-3xl"></div>
+                    <div class="relative bg-navy-900 border border-white/10 rounded-2xl p-6 glow-effect shadow-2xl">
+                        <!-- Abstract HealthTech / MarTech interface mockup -->
+                        <div class="flex items-center justify-between pb-4 border-b border-white/5 mb-6">
+                            <div class="flex items-center gap-2">
+                                <span class="px-2 py-0.5 rounded bg-accent-emerald/20 text-accent-emerald text-[10px] uppercase font-mono">HealthTech</span>
+                                <span class="px-2 py-0.5 rounded bg-accent-teal/20 text-accent-teal text-[10px] uppercase font-mono">MarTech</span>
+                            </div>
+                            <span class="text-xs text-accent-teal font-mono">Vision2027.json</span>
+                        </div>
+                        
+                        <!-- Mini Interactive Canvas Simulation inside visual card -->
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs text-offwhite-300 font-mono">Simulating Health Signal processing:</span>
+                                <span class="text-xs text-accent-emerald font-mono animate-pulse"><i class="fa-solid fa-heart-pulse"></i> 72 bpm</span>
+                            </div>
+                            <!-- Live CSS Graph Simulation -->
+                            <div class="h-32 bg-black/40 rounded-xl relative overflow-hidden p-4 border border-white/5 flex flex-col justify-end">
+                                <div class="absolute top-2 left-2 text-[10px] text-white/40 font-mono">Real-time Conversion Analytics</div>
+                                <div class="flex items-end gap-1.5 h-16">
+                                    <div class="w-full bg-accent-teal h-2/5 rounded-t-sm transition-all duration-1000" id="bar1"></div>
+                                    <div class="w-full bg-accent-violet h-3/5 rounded-t-sm transition-all duration-1000" id="bar2"></div>
+                                    <div class="w-full bg-accent-emerald h-1/5 rounded-t-sm transition-all duration-1000" id="bar3"></div>
+                                    <div class="w-full bg-accent-teal h-4/5 rounded-t-sm transition-all duration-1000" id="bar4"></div>
+                                    <div class="w-full bg-accent-violet h-2/5 rounded-t-sm transition-all duration-1000" id="bar5"></div>
+                                    <div class="w-full bg-accent-emerald h-5/5 rounded-t-sm transition-all duration-1000" id="bar6"></div>
+                                    <div class="w-full bg-accent-teal h-3/5 rounded-t-sm transition-all duration-1000" id="bar7"></div>
+                                </div>
+                            </div>
+                            <!-- Description inside panel -->
+                            <div class="p-3 bg-white/5 rounded-xl border border-white/5 text-xs text-offwhite-300 leading-relaxed font-mono">
+                                { <br>
+                                &nbsp;&nbsp;"industry_intersections": ["Digital Health", "Marketing Automation"], <br>
+                                &nbsp;&nbsp;"goal": "Transform raw clinical/marketing data into actionable interactive flows." <br>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Goals Description -->
+                <div class="order-1 lg:order-2 space-y-6">
+                    <h3 class="text-2xl font-bold text-accent-emerald">Where Tech Meets Human Value</h3>
+                    <p class="text-offwhite-200 text-lg leading-relaxed">
+                        My primary career objective is to work at the intersection of technical software development and high-impact industries like digital health (<strong class="text-offwhite-50">HealthTech</strong>) and modern data-driven marketing (<strong class="text-offwhite-50">MarTech</strong>). 
+                    </p>
+                    <p class="text-offwhite-200 text-lg leading-relaxed">
+                        I aim to use my specialized training in intelligent user interface architecture and digital analytics to build intuitive, user-friendly digital tools that make healthcare processes easier to navigate, or to lead the creation of smart conversion algorithms in the tech startup sector.
+                    </p>
+
+                    <!-- Interactive Goal Toggles -->
+                    <div class="space-y-4 pt-2">
+                        <div class="p-4 rounded-xl border border-white/5 bg-navy-900 flex gap-4 items-start hover:border-accent-emerald/40 transition-all cursor-pointer" onclick="toggleVisionTab('health')">
+                            <span class="w-10 h-10 rounded-lg bg-accent-emerald/10 flex items-center justify-center text-accent-emerald shrink-0">
+                                <i class="fa-solid fa-kit-medical"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-bold text-offwhite-50">Healthcare Technologies (HealthTech)</h4>
+                                <p class="text-sm text-offwhite-300 mt-1" id="healthDesc">Designing user-centered clinical UI and data tools that make patient support systems feel human and clear.</p>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl border border-white/5 bg-navy-900 flex gap-4 items-start hover:border-accent-teal/40 transition-all cursor-pointer" onclick="toggleVisionTab('marketing')">
+                            <span class="w-10 h-10 rounded-lg bg-accent-teal/10 flex items-center justify-center text-accent-teal shrink-0">
+                                <i class="fa-solid fa-bullseye"></i>
+                            </span>
+                            <div>
+                                <h4 class="font-bold text-offwhite-50">Marketing Analytics & Growth (MarTech)</h4>
+                                <p class="text-sm text-offwhite-300 mt-1" id="marketingDesc">Leveraging raw traffic datasets to build high-converting interfaces and automating audience pathways.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Contact & Interaction -->
+    <section id="contact" class="py-24 bg-navy-900 px-4 border-t border-white/5">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-xs font-semibold tracking-widest text-accent-teal uppercase px-3 py-1 rounded-full bg-accent-teal/10">Get In Touch</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-offwhite-50 mt-3">Let's Collaborate</h2>
+                <div class="w-16 h-1 bg-gradient-to-r from-accent-teal to-accent-emerald mx-auto mt-4 rounded-full"></div>
+                <p class="text-offwhite-300 mt-4 max-w-lg mx-auto">
+                    Interested in project leadership, healthcare engineering systems, or digital marketing growth? Reach out and start a discussion.
+                </p>
+            </div>
+
+            <form id="contactForm" class="space-y-6 bg-navy-950 border border-white/10 rounded-2xl p-6 sm:p-10 shadow-xl relative overflow-hidden">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label for="name" class="block text-xs font-semibold text-offwhite-300 uppercase tracking-wider mb-2">Name</label>
+                        <input type="text" id="name" required class="w-full bg-navy-900 border border-white/10 focus:border-accent-teal focus:outline-none rounded-xl px-4 py-3 text-offwhite-100 placeholder-white/20 transition-all text-sm" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-xs font-semibold text-offwhite-300 uppercase tracking-wider mb-2">Email Address</label>
+                        <input type="email" id="email" required class="w-full bg-navy-900 border border-white/10 focus:border-accent-teal focus:outline-none rounded-xl px-4 py-3 text-offwhite-100 placeholder-white/20 transition-all text-sm" placeholder="name@domain.com">
+                    </div>
+                </div>
+                <div>
+                    <label for="subject" class="block text-xs font-semibold text-offwhite-300 uppercase tracking-wider mb-2">Subject</label>
+                    <input type="text" id="subject" required class="w-full bg-navy-900 border border-white/10 focus:border-accent-teal focus:outline-none rounded-xl px-4 py-3 text-offwhite-100 placeholder-white/20 transition-all text-sm" placeholder="How can we build together?">
+                </div>
+                <div>
+                    <label for="message" class="block text-xs font-semibold text-offwhite-300 uppercase tracking-wider mb-2">Message</label>
+                    <textarea id="message" required rows="5" class="w-full bg-navy-900 border border-white/10 focus:border-accent-teal focus:outline-none rounded-xl px-4 py-3 text-offwhite-100 placeholder-white/20 transition-all text-sm resize-none" placeholder="Write details here..."></textarea>
+                </div>
+                <button type="submit" class="w-full px-8 py-4 rounded-xl bg-gradient-to-r from-accent-teal to-accent-emerald text-navy-950 font-bold hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] hover:scale-[1.01] transition-all text-center">
+                    Send Message <i class="fa-solid fa-paper-plane ml-2"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="py-12 border-t border-white/5 bg-navy-950 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div>
+                <p class="text-offwhite-200 font-bold">Mert Ali Kabasakal</p>
+                <p class="text-xs text-white/40 mt-1">Koç University Computer Engineering | Class of 2027</p>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="https://github.com/mkabasakal23" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-offwhite-200 hover:text-accent-teal hover:bg-white/10 transition-all">
+                    <i class="fa-brands fa-github text-lg"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/mert-ali-kabasakal/" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-offwhite-200 hover:text-accent-teal hover:bg-white/10 transition-all">
+                    <i class="fa-brands fa-linkedin-in text-lg"></i>
+                </a>
+                <a href="mailto:mertalikabasakal@gmail.com" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-offwhite-200 hover:text-accent-teal hover:bg-white/10 transition-all">
+                    <i class="fa-solid fa-envelope text-lg"></i>
+                </a>
+            </div>
+            <div>
+                <p class="text-xs text-white/40">&copy; 2026 Mert Ali Kabasakal. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lab 2 Progress Tracker Widget (Floating on Bottom Right) -->
+    <div id="trackerWidget" class="fixed bottom-6 right-6 z-50 transition-all duration-300">
+        <!-- Main Panel -->
+        <div id="trackerPanel" class="hidden bg-navy-900/95 border border-white/15 rounded-2xl p-5 glow-effect shadow-2xl w-80 backdrop-blur-md">
+            <div class="flex items-center justify-between pb-3 border-b border-white/10 mb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-accent-teal"><i class="fa-solid fa-graduation-cap mr-1"></i> Lab 2 Vibe Coding Progress</span>
+                <button onclick="toggleTracker()" class="text-offwhite-300 hover:text-accent-violet"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <ul class="space-y-4">
+                <li class="flex gap-3 items-start opacity-100">
+                    <span class="w-5 h-5 rounded-full bg-accent-teal/20 text-accent-teal flex items-center justify-center text-xs font-bold shrink-0 mt-0.5"><i class="fa-solid fa-check"></i></span>
+                    <div>
+                        <span class="text-xs font-bold text-offwhite-100 block">Step 1: Define Personal Profile</span>
+                        <span class="text-[10px] text-white/50 block">Who I Am, My Skills, My Future Goal set.</span>
+                    </div>
+                </li>
+                <li class="flex gap-3 items-start opacity-100">
+                    <span class="w-5 h-5 rounded-full bg-accent-teal/20 text-accent-teal flex items-center justify-center text-xs font-bold shrink-0 mt-0.5"><i class="fa-solid fa-check"></i></span>
+                    <div>
+                        <span class="text-xs font-bold text-offwhite-100 block">Step 2: Generate Prompts</span>
+                        <span class="text-[10px] text-white/50 block">AI prompts for abstract visual integration set.</span>
+                    </div>
+                </li>
+                <li class="flex gap-3 items-start">
+                    <span class="w-5 h-5 rounded-full bg-accent-teal/20 text-accent-teal flex items-center justify-center text-xs font-bold shrink-0 mt-0.5"><i class="fa-solid fa-check"></i></span>
+                    <div>
+                        <span class="text-xs font-bold text-offwhite-100 block">Step 3: Build Web App</span>
+                        <span class="text-[10px] text-white/50 block">Responsive, dark-contrast, interactive HTML compiled.</span>
+                    </div>
+                </li>
+                <li class="flex gap-3 items-start">
+                    <span class="w-5 h-5 rounded-full border border-white/20 text-white/30 flex items-center justify-center text-xs shrink-0 mt-0.5">4</span>
+                    <div>
+                        <span class="text-xs font-bold text-offwhite-300 block">Step 4: Review & Improve</span>
+                        <span class="text-[10px] text-white/40 block">Evaluate current live version and apply polish.</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- Trigger button -->
+        <button onclick="toggleTracker()" class="mt-2 ml-auto block px-4 py-3 rounded-full bg-gradient-to-r from-accent-teal to-accent-violet text-navy-950 font-bold shadow-lg hover:scale-105 transition-all">
+            <i class="fa-solid fa-list-check mr-2"></i> Lab Progress Tracker
+        </button>
+    </div>
+
+    <!-- Custom Success Toast (No Native Alerts Allowed) -->
+    <div id="successToast" class="fixed top-24 left-1/2 -translate-x-1/2 bg-navy-900 border border-accent-emerald/40 px-6 py-4 rounded-xl shadow-2xl z-50 flex items-center gap-3 transition-all duration-300 transform scale-0 pointer-events-none">
+        <span class="w-8 h-8 rounded-full bg-accent-emerald/10 text-accent-emerald flex items-center justify-center text-lg shrink-0">
+            <i class="fa-solid fa-check-double"></i>
+        </span>
+        <div>
+            <span class="text-sm font-bold text-offwhite-50 block">Message Transmitted!</span>
+            <span class="text-xs text-white/40 block">Thank you, Mert Ali will review your submission soon.</span>
+        </div>
+    </div>
+
+    <!-- Scripts Area -->
+    <script>
+        // 1. Mobile Menu Toggling
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 2. Profile Interactive Simulation Button
+        const simulateBtn = document.getElementById('simulateBtn');
+        const simulatedOutput = document.getElementById('simulatedOutput');
+
+        simulateBtn.addEventListener('click', () => {
+            simulatedOutput.classList.toggle('hidden');
+            if(!simulatedOutput.classList.contains('hidden')) {
+                simulateBtn.innerText = "Stop simulation";
+            } else {
+                simulateBtn.innerText = "Run Profile()";
+            }
+        });
+
+        // 3. Goal Interactive Description Highlight (Tab Action)
+        function toggleVisionTab(tabName) {
+            const hDesc = document.getElementById('healthDesc');
+            const mDesc = document.getElementById('marketingDesc');
+            
+            if (tabName === 'health') {
+                hDesc.classList.add('text-accent-emerald', 'font-bold');
+                hDesc.classList.remove('text-offwhite-300');
+                mDesc.classList.remove('text-accent-teal', 'font-bold');
+                mDesc.classList.add('text-offwhite-300');
+            } else {
+                mDesc.classList.add('text-accent-teal', 'font-bold');
+                mDesc.classList.remove('text-offwhite-300');
+                hDesc.classList.remove('text-accent-emerald', 'font-bold');
+                hDesc.classList.add('text-offwhite-300');
+            }
+        }
+
+        // 4. Contact Form Validation and Toast Display
+        const contactForm = document.getElementById('contactForm');
+        const successToast = document.getElementById('successToast');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Trigger beautiful Toast Transition
+            successToast.classList.remove('scale-0');
+            successToast.classList.add('scale-100');
+            
+            setTimeout(() => {
+                successToast.classList.add('scale-0');
+                successToast.classList.remove('scale-100');
+                contactForm.reset();
+            }, 4000);
+        });
+
+        // 5. Lab Progress Tracker Widget Toggle
+        function toggleTracker() {
+            const panel = document.getElementById('trackerPanel');
+            panel.classList.toggle('hidden');
+        }
+
+        // 6. Interactive Network Canvas (IUI Theme Focus)
+        const canvas = document.getElementById('interactiveCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let points = [];
+        const pointCount = 45;
+        let mouse = { x: null, y: null, radius: 150 };
+
+        function initCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            points = [];
+            for (let i = 0; i < pointCount; i++) {
+                points.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 0.4,
+                    vy: (Math.random() - 0.5) * 0.4,
+                    r: Math.random() * 2 + 1
+                });
+            }
+        }
+
+        function drawCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw node connections
+            for (let i = 0; i < points.length; i++) {
+                let p1 = points[i];
+                p1.x += p1.vx;
+                p1.y += p1.vy;
+
+                // Wall Collisions
+                if (p1.x < 0 || p1.x > canvas.width) p1.vx *= -1;
+                if (p1.y < 0 || p1.y > canvas.height) p1.vy *= -1;
+
+                // Node Point rendering
+                ctx.beginPath();
+                ctx.arc(p1.x, p1.y, p1.r, 0, Math.PI * 2);
+                ctx.fillStyle = '#06B6D4';
+                ctx.fill();
+
+                // Point connections
+                for (let j = i + 1; j < points.length; j++) {
+                    let p2 = points[j];
+                    let dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
+                    if (dist < 120) {
+                        ctx.beginPath();
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.strokeStyle = `rgba(6, 182, 212, ${1 - (dist / 120)})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+
+                // Interaction with mouse tracking
+                if (mouse.x && mouse.y) {
+                    let mDist = Math.hypot(p1.x - mouse.x, p1.y - mouse.y);
+                    if (mDist < mouse.radius) {
+                        ctx.beginPath();
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(mouse.x, mouse.y);
+                        ctx.strokeStyle = `rgba(139, 92, 246, ${1 - (mDist / mouse.radius)})`;
+                        ctx.lineWidth = 0.8;
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(drawCanvas);
+        }
+
+        window.addEventListener('resize', initCanvas);
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+        window.addEventListener('mouseout', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        // 7. Dynamic Future Goal Graphs Scaling
+        function animateFutureGraphs() {
+            const graphs = ['bar1', 'bar2', 'bar3', 'bar4', 'bar5', 'bar6', 'bar7'];
+            setInterval(() => {
+                graphs.forEach(id => {
+                    const el = document.getElementById(id);
+                    if(el) {
+                        const randomHeight = Math.floor(Math.random() * 85) + 15;
+                        el.style.height = `${randomHeight}%`;
+                    }
+                });
+            }, 1800);
+        }
+
+        // Initialize On Load
+        window.onload = function() {
+            initCanvas();
+            drawCanvas();
+            animateFutureGraphs();
+        }
+    </script>
+</body>
+</html>

@@ -509,51 +509,6 @@
         </div>
     </footer>
 
-    <!-- Lab 2 Progress Tracker Widget -->
-    <div id="trackerWidget" class="fixed bottom-6 right-6 z-50 transition-all duration-300">
-        <!-- Main Panel -->
-        <div id="trackerPanel" class="hidden bg-navy-900/95 border border-white/15 rounded-2xl p-5 glow-effect shadow-2xl w-80 backdrop-blur-md">
-            <div class="flex items-center justify-between pb-3 border-b border-white/10 mb-4">
-                <span class="text-xs font-bold uppercase tracking-wider text-accent-teal"><i class="fa-solid fa-graduation-cap mr-1"></i> Lab 2 Vibe Coding Progress</span>
-                <button onclick="toggleTracker()" class="text-offwhite-300 hover:text-accent-violet"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-            <ul class="space-y-4">
-                <li class="flex gap-3 items-start opacity-100">
-                    <span class="w-5 h-5 rounded-full bg-accent-teal/20 text-accent-teal flex items-center justify-center text-xs font-bold shrink-0 mt-0.5"><i class="fa-solid fa-check"></i></span>
-                    <div>
-                        <span class="text-xs font-bold text-offwhite-100 block">Step 1: Define Personal Profile</span>
-                        <span class="text-[10px] text-white/50 block">Who I Am, My Skills, My Future Goal set.</span>
-                    </div>
-                </li>
-                <li class="flex gap-3 items-start opacity-100">
-                    <span class="w-5 h-5 rounded-full bg-accent-teal/20 text-accent-teal flex items-center justify-center text-xs font-bold shrink-0 mt-0.5"><i class="fa-solid fa-check"></i></span>
-                    <div>
-                        <span class="text-xs font-bold text-offwhite-100 block">Step 2: Generate Prompts</span>
-                        <span class="text-[10px] text-white/50 block">AI prompts for abstract visual integration set.</span>
-                    </div>
-                </li>
-                <li class="flex gap-3 items-start">
-                    <span class="w-5 h-5 rounded-full bg-accent-teal/20 text-accent-teal flex items-center justify-center text-xs font-bold shrink-0 mt-0.5"><i class="fa-solid fa-check"></i></span>
-                    <div>
-                        <span class="text-xs font-bold text-offwhite-100 block">Step 3: Build Web App</span>
-                        <span class="text-[10px] text-white/50 block">Responsive, dark-contrast, interactive HTML compiled.</span>
-                    </div>
-                </li>
-                <li class="flex gap-3 items-start opacity-60">
-                    <span class="w-5 h-5 rounded-full border border-white/20 text-white/30 flex items-center justify-center text-xs shrink-0 mt-0.5">4</span>
-                    <div>
-                        <span class="text-xs font-bold text-offwhite-300 block">Step 4: Review & Improve</span>
-                        <span class="text-[10px] text-white/40 block">Evaluate current live version and apply polish.</span>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <!-- Trigger button -->
-        <button onclick="toggleTracker()" class="mt-2 ml-auto block px-4 py-3 rounded-full bg-gradient-to-r from-accent-teal to-accent-violet text-navy-950 font-bold shadow-lg hover:scale-105 transition-all">
-            <i class="fa-solid fa-list-check mr-2"></i> Lab Progress Tracker
-        </button>
-    </div>
-
     <!-- Custom Success Toast -->
     <div id="successToast" class="fixed top-24 left-1/2 -translate-x-1/2 bg-navy-900 border border-accent-emerald/40 px-6 py-4 rounded-xl shadow-2xl z-50 flex items-center gap-3 transition-all duration-300 transform scale-0 pointer-events-none">
         <span class="w-8 h-8 rounded-full bg-accent-emerald/10 text-accent-emerald flex items-center justify-center text-lg shrink-0">
@@ -622,13 +577,7 @@
             }, 4000);
         });
 
-        // 5. Lab Progress Tracker Widget Toggle
-        function toggleTracker() {
-            const panel = document.getElementById('trackerPanel');
-            panel.classList.toggle('hidden');
-        }
-
-        // 6. Interactive Network Canvas (IUI Theme Focus)
+        // 5. Interactive Network Canvas (IUI Theme Focus)
         const canvas = document.getElementById('interactiveCanvas');
         const ctx = canvas.getContext('2d');
 
@@ -705,7 +654,7 @@
             mouse.y = null;
         });
 
-        // 7. Dynamic Future Goal Graphs Scaling
+        // 6. Dynamic Future Goal Graphs Scaling
         function animateFutureGraphs() {
             const graphs = ['bar1', 'bar2', 'bar3', 'bar4', 'bar5', 'bar6', 'bar7'];
             setInterval(() => {
